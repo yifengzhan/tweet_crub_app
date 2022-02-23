@@ -1,0 +1,31 @@
+<h2 class="edit-tweet-header">Edit Tweet</h2>
+
+
+<form  class="edit-tweet" action="/tweets/<%= tweet['id']%>/update" method="POST">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Date: </label>
+  <input type="text" name="date" value="<%= tweet['date'] %>">
+
+  <label for="">Tweet: </label>
+  <textarea class="new-tweet" type="text" name="tweet" ><%= tweet['tweet'] %></textarea>
+
+  <label for="">Original Link: </label>
+  <input type="text" name="link" value="<%= tweet['link'] %>">
+
+  <label for="">1 min before Tweet: $ </label>
+  <input class="price-input" type="text" name="one_min_bt" value="<%= tweet['one_min_bt'] %>">
+
+  <label for="">5 mins after Tweet: $ </label>
+  <input class="price-input" type="text" name="five_min_at" value="<%= tweet['five_min_at'] %>">
+
+  <label for="">10 mins after Tweet: $ </label>
+  <input class="price-input" type="text" name="ten_min_at" value="<%= tweet['ten_min_at'] %>">
+
+  
+  <button class="update-tweet-btn">Update a Tweet</button>
+</form>
+
+
+
+<img class="edit-elon-img" src="https://www.cnet.com/a/img/u5kHjRvIGaXSlCQek5zYnrHulKA=/1200x675/2019/12/16/8276189c-a846-4554-944d-afaf61ffcae9/gettyimages-1130598318-1.jpg" alt="">

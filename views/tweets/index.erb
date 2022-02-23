@@ -1,0 +1,74 @@
+<h1>Elon's Dogecoin Tweet Collection</h1>
+
+<% if logged_in? %>
+  
+  <div class="lower-header">
+    <img class="header-doge-img"src="http://assets.stickpng.com/thumbs/5845e635fb0b0755fa99d7e9.png" alt="">
+
+    <div>
+    <h2>Welcome to Elon's Dogecoin Tweet Collection <%= current_user['first_name'] %> !</h2>
+
+    <form class="logout-btn" action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <button >Logout</button>
+    </form>
+
+    <div class="add-doge-section">
+      <span class="add-doge-text"><a class="add-doge-hyperlink"href="/tweets/new">+ Add Dogecoin Tweet</a>
+      </span>
+    </div>
+
+    </div>
+
+    <img class="header-doge-img" src="http://assets.stickpng.com/images/5845e69dfb0b0755fa99d7ef.png" alt="">
+  </div>
+
+
+  <main>
+    <% dogecoin_tweets.each do |tweet|%>
+      <div class="date-original-tweet">
+      <h2 class="date"><%=tweet['date']%></h2>
+      <a class="original-tweet" href="<%= tweet['link']  %>">Original Tweet</a>
+      </div>
+
+      <h3 class="tweet"><%=tweet['tweet']%></h3>
+     
+
+
+      <div class="price-changes">
+      <h4><span class="price-times">1 min before Tweet:</span><span class="prices">$<%=tweet['one_min_bt']%></span></h4>
+
+      <h4><span class="price-times">5 mins after Tweet:</span><span class="prices">$<%=tweet['five_min_at']%></span></h4>
+      
+      <h4><span class="price-times">10 mins after Tweet:</span><span class="prices">$<%=tweet['ten_min_at']%></span></h4>
+      </div>      
+
+
+      <div class="edit-delete">
+        
+        <button ><a class="edit-btn" href="/tweets/<%=tweet['id']%>/edit">Edit</a></button>
+        
+        <form action="/tweets/<%=tweet['id']%>" method="POST">
+          <input type="hidden" name="_method" value="delete">
+          <button class="delete-btn">Delete</button>
+        </form>
+      </div>
+    <%end%>
+  </main>
+
+
+<% else %>
+  <p class="history">History of Elon's doge tweets and price impact</p>
+  <nav>
+    <a href="/sign_up">Sign up</a>
+    <a href="/login">Login</a>
+  </nav>
+  
+  <br>
+  <div class="index-img">
+  <img src="https://1.bp.blogspot.com/-NgB3Bc1n9RM/YIleomv_YCI/AAAAAAAADyY/dTdhVIfP1PgDPv3vtcWKl_WHvBS3JbEywCLcBGAsYHQ/s663/Elon%2BM.jpg" alt=""> 
+  </div>
+
+
+<% end %>
+
