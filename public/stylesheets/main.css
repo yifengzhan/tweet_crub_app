@@ -40,35 +40,73 @@ h2 {
 .date-original-tweet {
     display: grid;
     grid-template-columns: 1fr 2fr 7fr;
-    align-items: baseline;
-    gap: 20px;
+    align-items: center;
 }
 
+.date {
+    text-align: left;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0;
+    color: rgb(243, 7, 38);
+}
 
 .original-tweet {
+    display: flex;
+    justify-items: left;
+    align-items: flex-end;
+    margin-left: 30px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(56, 13, 250);
-    margin-top: 20px;
     margin-bottom: 0;
+    gap: 4px;
 }
+
+.twitter-icon{
+    display: flex;
+    align-items: baseline;
+    width:20px;
+}
+
+
+
 
 .tweet {
     padding-top: 5px;
     padding-bottom: 20px;
     padding-left: 5px;
     background-color: rgb(127, 237, 245);
+    overflow-wrap: break-word;
 }
 
 
 .price-changes {
-    
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2.5fr 3fr 3fr;
     justify-content: center;
     padding-top: 0;
     padding-bottom: 10px;
 }
 
+
+.price-changes-0 {
+    display: flex;
+    justify-content:flex-start;
+}
+
+.price-changes-1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+.percentage{
+    padding: 2px 7px;
+    color: rgb(245, 6, 6);
+    background-color: rgb(233, 245, 3);
+}
 
 .price-times{
     background-color: rgb(173, 168, 170);
@@ -140,14 +178,8 @@ main {
     margin: 0 auto;
 }
 
-.date {
-    text-align: left;
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-    margin-bottom: 0;
-    color: rgb(243, 7, 38);
-}
+
+
 
 h3 {
     font-family:Arial, Helvetica, sans-serif;
