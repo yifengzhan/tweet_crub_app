@@ -316,6 +316,16 @@ h3 {
     justify-content: center;
 }
 
+
+footer{
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+
+
+
 .back-to-top {
 
     font-family: Arial, Helvetica, sans-serif;
@@ -331,3 +341,4 @@ h3 {
 .back-to-top-hyperlink {
     text-decoration: none;
 }
+
